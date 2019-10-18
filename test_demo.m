@@ -64,10 +64,15 @@ for bi=1:length(bits)
 
 
     % Img2Txt
-    rHI = I_tr*PV;
+    tHI = I_te*PV;
 
     % Txt2Img
-    rHT = T_tr*PT;
+    tHT = T_te*PT;
+    
+    % Hash codes generation
+    H = H > 0;
+    tHI = tHI > 0;
+    tHT = tHT > 0;
 
     % Evaluation
     [results{bi}.MAP1,results{bi}.PreRank1,results{bi}.RecRank1,results{bi}.PreNo1,results{bi}.RecNo1]=evaluation(H,tHI,cateTrainTest);
